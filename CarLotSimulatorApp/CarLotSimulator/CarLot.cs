@@ -1,17 +1,21 @@
 using System;
-
-namespace CarLotSimulator;
 using System.Collections.Generic;
 
-public class CarLot
+namespace CarLotSimulator
 {
-    public List<Car> ParkingLot { get; set; }  = new List<Car>();
-
-    public void CheckCars()
+    public class CarLot
     {
-        foreach (var vehicle in ParkingLot)
+        // Static field to track number of cars created
+        public static int numberOfCars = 0;
+
+        public List<Car> ParkingLot { get; set; } = new List<Car>();
+
+        public void CheckCars()
         {
-            Console.WriteLine($"{vehicle.Make} {vehicle.Model} {vehicle.Year}");
+            foreach (var vehicle in ParkingLot)
+            {
+                Console.WriteLine($"{vehicle.Year} {vehicle.Make} {vehicle.Model}");
+            }
         }
     }
 }
